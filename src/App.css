@@ -40,12 +40,16 @@ left: 0;
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-left: 43%;
+  margin-left: 40%;
   margin-top: 7%;
   font-size: 20px;
   font-weight: 600;
   transition: all .5s ease;
+ }
+ .linkbtn1{
+  text-decoration: none;
   color: rgb(114, 111, 111);
+
  }
  
  .BTN1:hover {
@@ -57,9 +61,22 @@ left: 0;
  
 .BTN1:active {
   letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  background-color:rgb(244,192,53);
+  color: hsl(0, 0%, 0%);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
   transform: translateY(10px);
   transition: 100ms;
+ }
+
+ .servwrapper{
+  align-items: center;
+  justify-content: center;
+  border: black;
+ }
+ .servecontainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+ }.searchbar{
+  display: flex;
  }
