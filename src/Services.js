@@ -1,56 +1,185 @@
 import React, { useState } from 'react'
+import {  useCart } from "react-use-cart";
+import { Link } from 'react-router-dom';
 import data from './data'
 
 function Services() {
+
+    const { addItem } = useCart();
     const [filter, setFilter] = useState('')
+    const { totalItems } = useCart();
+    const [selectedCategory, setSelectedCategory] = useState('all')
+
 
     const searchText = (e) =>{
         setFilter(e.target.value)
     }
-   let dataSearch = data.cardData.filter(item =>{
-    return Object.keys(item).some(key=>
-        item[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
-   })
+
+    const handleCategoryClick = (category) =>{
+        setSelectedCategory(category)
+        setFilter('') //CLEAR THE FILTER WHEN A NEW CATEGORY IS SELECTED
+    }
+
+    //Filter items based on category and search
+    const filteredItems = data.cardData.filter((item) => {
+      const categoryFilter = selectedCategory === 'all' || item.category === selectedCategory
+      const searchFilter =  Object.keys(item).some(key=>
+        item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+        )
+        return  categoryFilter && searchFilter
+    })
+    
+   {/* SEARCH FILTER FUNCTION*/}
+  //  let dataSearch = data.cardData.filter(item =>{
+  //   return Object.keys(item).some(key=>
+  //       item[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
+  //  })
+
+
 
 
 
   return (
+    <div>
+
+<svg className='waves' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+<path fill="rgb(244,192,53)" fill-opacity="1" d="M0,224L120,229.3C240,235,480,245,
+720,245.3C960,245,1200,235,1320,229.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,
+0,240,0,120,0L0,0Z">
+    </path>
+    </svg>
     <div className='py-4 container '>
         <div className='row justify-container-centre'>
-            <div className='searchbar'>
-                <div>
+            
+            <div className='servehead'>
                 <h2>welcome </h2>  
-             <p>What can we serve you</p>
+                <p>What can we serve you</p>
                 </div>
+            <div className='searchbar'>
 
-                <div className='col-10 mb-5'>
-                    <div className='mb-3 col-5 mx-auto text-centre'>
+                <div className='col-4 mb-5' >
+                    <div className='mb-3 col-17 mx-auto text-centre' >
                         <label className='form-label'>Search</label>
                         <input
+                        id='searchfood'
                         type='text'
+                        placeholder="What are you buying..." 
                         className='form-control'
                         value={filter}
                         onChange={searchText.bind(this)}
                         />
-                       
                     </div>
                 </div>
-     
+
+                <div className='carticon'>
+                    <h5>
+                       <Link to='addcart'> 
+                         <i class="fa-solid fa-cart-shopping">
+                            {totalItems}
+                            </i>
+                       </Link> 
+                    </h5>
+                </div>
+            </div>
+
+            <div className='category'>
+                <div className='catwrapper'>
+                <button className={`cartbtn ${selectedCategory === 'all' ? 'active' : ''}`} onClick={() => handleCategoryClick('all')} id='cartegorybtn'>
+                All
+                </button>
+                <button className={`cartbtn ${selectedCategory === 'fast-food' ? 'active' : ''}`} onClick={() => handleCategoryClick('fast-food')}>
+                fast-food
+                </button>
+                <button className={`cartbtn ${selectedCategory === 'Snack' ? 'active' : ''}`} onClick={() => handleCategoryClick('Snack')}>
+                Snack
+                </button>
+                <button className={`cartbtn ${selectedCategory === 'Drinks' ? 'active' : ''}`} onClick={() => handleCategoryClick('Drinks')}>
+                Drinks
+                </button>
+      
+           </div>
+
+           <div className='servecontainer'>
+        {filteredItems.map((item) => (
+          <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4' key={item.id}>
+            <div className='col'>
+              <div className='card p-0 overflow-hidden shadow'>
+                <img src={item.img} className='card-img-top' alt='...' style={{ height: '200px' }} />
+                <div className='card-body'>
+                  <h5 className='card-title'>{item.name}</h5>
+                  <div key={item.id} className='addcart'>
+                    <p className='card-text'>Ksh.{item.price}</p>
+                    <button onClick={() => addItem(item)} className='cssbuttons-io-button'>
+                      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'>
+                        <path fill='none' d='M0 0h24v24H0z'></path>
+                        <path
+                          fill='currentColor'
+                          d='M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z'
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+
+ {/* CATEGORY FILTERING*/}
+
+           {/* <div className='servecontainer'>
+    {data.cardData
+      .filter((item) => {
+        if (selectedCategory === 'all') {
+          return true; // Display all items
+        } else {
+          return item.category === selectedCategory; // Filter by selected category
+        }
+      })
+      .map((item) => (
+        <div class="col-11 col-md-6 col-lg-3 mx-0 mb-4 " key={item.id}>
+            <div className='col'>
+                <div className='card p-0 overflow-hidden shadow'>
+                <img src={item.img} class="card-img-top " alt="..." style={{ height: '200px' }}/>
+                <div className='card-body'>
+                <h5 class="card-title">{item.name}</h5>
+                <div key={item.id} className='addcart'>
+                <p class="card-text">Ksh.{item.price}</p>
+                <button id='addbtn' onClick={() => addItem(item)} class="cssbuttons-io-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+  <span>Add</span>
+</button>
+                </div>
+                </div>
+                </div>
+            </div>
+          
+        </div>
+      ))}
+  </div> */}
             </div>
         
 
-
-        <div className='servecontainer'>
+                        {/*MAPPING THE DATA ITEMS IN A CARD CONTAINER */}
+        {/* <div className='servecontainer'>
         {dataSearch.map((item, index) =>{
         return(
             <div class="col-11 col-md-6 col-lg-3 mx-0 mb-4 ">
             <div class="col ">
-            <div class="card p-0 overflow-hidden h-100 shadow ">
-              <img src={item.img} class="card-img-top" alt="..."/>
+            <div class="card p-0 overflow-hidden shadow ">
+              <img src={item.img} class="card-img-top " alt="..." style={{ height: '200px' }}/>
               <div class="card-body">
                 <h5 class="card-title">{item.name}</h5>
-                <h6 class="card-title">{item.category}</h6>
-                <p class="card-text">{item.price}</p>
+                <div key={item.id} className='addcart'>
+                <p class="card-text">Ksh.{item.price}</p>
+                <button id='addbtn' onClick={() => addItem(item)} class="cssbuttons-io-button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+  <span>Add</span>
+</button>
+                </div>
               </div>
             </div>
           </div>
@@ -58,11 +187,15 @@ function Services() {
         )
     })}
 
-</div> 
+</div>   */}
+
         </div>
         </div>
+        </div>
+
     
   )
 }
 
 export default Services
+
