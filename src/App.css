@@ -1,24 +1,27 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.homepage h2{
+
+.homepage h2 {
   font-size: 60px;
   width: 30%;
   color: rgb(0, 0, 0);
 }
 
-.carousel img{
+.carousel img {
   width: 100%;
   height: 55vh;
   border-radius: 200px;
-margin-top: 10%;
+  margin-top: 10%;
 }
-.carousel{
+
+.carousel {
   width: 70%;
 }
-.homepage{
+
+.homepage {
   justify-content: center;
   align-items: center;
   margin-left: 10%;
@@ -26,10 +29,11 @@ margin-top: 10%;
   position: relative;
 
 }
-.waves{
-position: absolute;
-width: 100%;
-left: 0;
+
+.waves {
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
 
 .BTN1 {
@@ -49,110 +53,129 @@ left: 0;
   font-size: 20px;
   font-weight: 600;
   transition: all .5s ease;
- }
- .linkbtn1{
+}
+
+.linkbtn1 {
   text-decoration: none;
   color: rgb(114, 111, 111);
 
- }
- 
- .BTN1:hover {
+}
+
+.BTN1:hover {
   letter-spacing: 3px;
-  background-color:rgb(244,192,53);
+  background-color: rgb(244, 192, 53);
   color: hsl(0, 0%, 1%);
   box-shadow: rgb(2, 1, 3) 0px 7px 29px 0px;
- }
- 
+}
+
 .BTN1:active {
   letter-spacing: 3px;
-  background-color:rgb(244,192,53);
+  background-color: rgb(244, 192, 53);
   color: hsl(0, 0%, 0%);
   box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
   transform: translateY(10px);
   transition: 100ms;
- }
+}
 
- .servwrapper{
+.servwrapper {
   align-items: center;
   justify-content: center;
   border: black;
- }
- .servecontainer{
+}
+
+.servecontainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 5rem;
- }
- .searchbar{
+}
+
+.searchbar {
   display: flex;
   position: relative;
   align-items: center;
-  left: 0px;
+  margin-left: 14%;
   top: 10px;
   z-index: 1;
- }
- #searchfood{
+}
+
+#searchfood {
   border-radius: 50px;
   padding: 15px;
- }
- .servehead{
-  
-  margin-left: 70px;
+}
+
+.servehead {
+  margin-left: 14%;
   top: 10px;
   z-index: 1;
- }
- .card img{
+}
+
+.card img {
   height: 200%;
- }
- .addcart{
+}
+
+.addcart {
   display: flex;
   justify-content: space-between;
- }
- .category{
-  z-index: 1;
-margin-bottom: 3%;
+}
 
- }
- .catwrapper{
+.category {
+  z-index: 1;
+  margin-bottom: 3%;
+
+}
+
+.catwrapper {
   display: flex;
   justify-content: space-evenly;
- }
- #cartegorybtn{
+}
+
+#cartegorybtn {
   justify-content: space-between;
   font-size: 30px;
 }
 
- .carticon{
-  margin-left: 25%;
-  font-size: 30px;
- }
- .carticon i{
+.carticon {
+  margin-left: 30%;
+}
+
+.carticon a {
+  color: inherit;
+}
+
+.carticon i {
   font-size: 35px;
- }
- .cartheader{
+  display: flex;
+  color: rgb(9, 9, 9);
+  gap: 0.5rem;
+}
+
+.cartheader {
   margin-top: 3%;
 
- }
- .cartcontainer{
+}
+
+.cartcontainer {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   margin-top: 3%;
 
- }
- .cartcard {
+}
+
+.cartcard {
   margin-left: -1rem;
   margin-right: -1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   margin-bottom: 2rem;
-  width: 520px;
+  width: 720px;
   height: 650px;
   display: flex;
   flex-direction: column;
   border-radius: 0.25rem;
-  background-color:rgb(244,192,53);
+  background-color: rgb(244, 192, 53);
   padding: 1.5rem;
 }
 
@@ -162,13 +185,13 @@ margin-bottom: 3%;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   line-height: 2rem;
   font-weight: 700;
-  margin-left: 20%;
+  margin-left: 30%;
+  margin-top: 10%;
   margin-bottom: 2%;
   color: #000000
-
 }
 
 .price {
@@ -187,7 +210,7 @@ margin-bottom: 3%;
 
 .lists {
   font-size: 1.5rem;
-  
+
   margin-bottom: 1.5rem;
   flex: 1 1 0%;
   color: rgb(0, 0, 0);
@@ -222,80 +245,51 @@ margin-bottom: 3%;
   letter-spacing: 0.05em;
   color: rgba(17, 24, 39, 1);
 }
-.algebra{
-  background-color:rgba(188, 160, 84, 0.456);
+
+.algebra {
+  background-color: rgba(188, 160, 84, 0.456);
   border-radius: 50px;
   border: none;
-margin-left: 5px;
-width: 35px;
-cursor: pointer;
-transition: 0.5s;
+  margin-left: 5px;
+  width: 35px;
+  cursor: pointer;
+  transition: 0.5s;
 }
-.algebra:hover{
+
+.algebra:hover {
   box-shadow: green;
 }
-#dustbin{
+
+#dustbin {
   color: rgb(227, 4, 4);
-}
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
   border: none;
-  background-color: transparent;
-  position: relative;
+  background-color: inherit;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
 }
 
-.btn::after {
-  content: 'like';
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  font-size: 15px;
-  color: rgb(0, 0, 0);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  transition: .2s linear;
-  top: 115%;
+#dustbin:hover {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.23em);
+  /* Push the button downwards when pressed */
+  transform: translateY(0.2em);
 }
 
-.icon {
-  width: 30px;
-  height: 30px;
-  transition: .2s linear;
-}
 
-.icon path {
-  fill: rgb(24, 22, 22);
-  transition: .2s linear;
-}
-
-.btn:hover > .icon {
-  transform: scale(1.2);
-}
-
-.btn:hover > .icon path {
-  fill: rgb(218, 13, 13);
-}
-
-.btn:hover::after {
-  visibility: visible;
-  opacity: 1;
-  top: 105%;
-}
-
-.cartmoving{
-  justify-content: center;
+.cartmoving {
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   gap: 20rem;
+  margin-left: 10%;
 }
-.cartmoving i{
+
+.cartmoving i {
   font-size: 45px;
+}
+.ordered{
+  color: rgb(3, 3, 3) !important;
+  background: linear-gradient(0deg, rgb(236, 196, 196) 0%, rgb(248, 1, 1) 100%) !important;
 }
 .cssbuttons-io-button {
   display: flex;
@@ -306,11 +300,13 @@ transition: 0.5s;
   padding: 0.7em 1.4em 0.7em 1.1em;
   color: hsl(0, 2%, 38%);
   background: #ad5389;
-  background: linear-gradient(0deg, rgb(238, 219, 77) 0%, rgba(102,247,113,1) 100%);
+  background: linear-gradient(0deg, rgb(238, 219, 77) 0%, rgba(102, 247, 113, 1) 100%);
   border: none;
   box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
   letter-spacing: 0.05em;
   border-radius: 20em;
+  transform: translateY(-0.2em);
+  transition: transform 0.4s ease;
 }
 
 .cssbuttons-io-button svg {
@@ -319,49 +315,253 @@ transition: 0.5s;
 
 .cssbuttons-io-button:hover {
   box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.53em);
+
 }
 
 .cssbuttons-io-button:active {
   box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+  transform: translateY(-0.53em);
+  /* Push the button downwards when pressed */
+  transform: translateY(0.1em);
 }
+
 #addbtn:hover {
   letter-spacing: 3px;
   background-color: hsl(0, 0%, 0%);
-  color: hsl(0, 1%, 15%);
+  color: hsl(0, 100%, 99%);
   box-shadow: rgb(100, 83, 10) 0px 7px 29px 0px;
- }
- 
- #addbtn:active {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#addbtn:active {
   letter-spacing: 3px;
   background-color: hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
   box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
   transform: translateY(10px);
   transition: 100ms;
- }
-
- .algebra:hover {
-  letter-spacing: 3px;
-  background-color: hsl(0, 0%, 7%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(100, 83, 10) 0px 7px 29px 0px;
- }
- .algebra:active {
-  letter-spacing: 3px;
-  background-color: hsl(0, 2%, 36%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(80, 78, 78) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 50ms;
- }
- .prompt-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 10px;
 }
-.carttable th{
+
+.carttable th {
+  font-size: 28px;
+}
+
+tbody tr {
   font-size: 20px;
 }
 
+tbody td {
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+#addbtn {
+  font-size: 25px;
+  border-radius: none;
+  background-color: inherit;
+  margin-right: 10px;
+
+}
+
+#cartbtn3 {
+  border: none;
+  background-color: inherit;
+}
+
+
+.cartbtn {
+  transition: all 0.3s ease-in-out;
+  font-family: "Dosis", sans-serif;
+}
+
+.cartbtn {
+  margin-bottom: 2%;
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  background: linear-gradient(0deg, rgb(253, 253, 252) 0%, rgb(249, 216, 0) 100%);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  color: rgb(6, 6, 6);
+  transform: translateY(-0.2em);
+  transition: transform 0.4s ease;
+}
+
+.cartbtn :active {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.23em);
+  /* Push the button downwards when pressed */
+  transform: translateY(0.2em);
+  box-shadow: none;
+}
+
+/* HOVER EFFECT FOR SCREENS LARGER THAN 1024*/
+@media (max-width: 1024px) {}
+
+
+/* HOVER EFFECT FOR SCREENS BETWEEN 601PX AND 1024*/
+@media screen and (min-width:601) and (max-width: 1024px) {
+  .searchbar {
+    margin-left: 0;
+  }
+}
+
+
+
+/* HOVER EFFECT FOR SCREENS SMAALER THAN 600*/
+@media (max-width: 600px) {
+  .searchbar {
+    margin-left: 0%;
+    margin-bottom: -20px;
+  }
+
+  .servehead {
+    margin-left: 0%;
+  }
+
+  .servehead h2 {
+    font-size: 18px;
+  }
+
+  .carticon {
+    margin-left: 25%;
+    margin-top: -15%;
+  }
+
+  .carticon i {
+    font-size: 25px;
+  }
+
+  #search1 {
+    width: 200px;
+  }
+
+  #search1 input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .cartbtn {
+    margin-bottom: 2%;
+    width: 70px;
+    height: 30px;
+    border-radius: 50px;
+    background: linear-gradient(0deg, rgb(253, 253, 252) 0%, rgb(249, 216, 0) 100%);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    color: rgb(6, 6, 6);
+    transform: translateY(-0.2em);
+    transition: transform 0.4s ease;
+  }
+
+  .servecontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .servecontainer .card {
+    width: 100%;
+    position: relative;
+    border: none;
+  }
+
+  .servecontainer .card .card-img-top {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    object-fit: cover;
+  }
+
+  .servecontainer .card .card-body {
+    padding-bottom: 10px;
+    /* Adjust this value to change the aspect ratio */
+  }
+
+  .cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 13px;
+    width: 55px;
+    height: 30px;
+    color: hsl(0, 2%, 38%);
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(238, 219, 77) 0%, rgba(102, 247, 113, 1) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+    letter-spacing: 0.002em;
+    border-radius: 20em;
+  }
+  .ordered{
+    width: 75px;
+    color: rgb(3, 3, 3) !important;
+    background: linear-gradient(0deg, rgb(236, 196, 196) 0%, rgb(248, 1, 1) 100%) !important;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .cartcard {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 2rem;
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    background-color: rgb(244, 192, 53);
+    padding: 0.6rem;
+  }
+
+  .price {
+    font-size: 38px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  .carttable th {
+    font-size: 20px;
+  }
+
+  tbody td {
+    font-size: 19px;
+    letter-spacing: 2px;
+  }
+
+  #addbtn {
+    font-size: 15px;
+    border-radius: none;
+    background-color: inherit;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .cartmoving i {
+    font-size: 25px;
+    padding-top:  150%; ;
+  }
+  .title{
+    font-size: 15px;
+    margin-left: 25%;
+    letter-spacing: 1px;
+  }
+  .price2{
+    color: red;
+  }
+}
