@@ -35,9 +35,6 @@ function Cart() {
       setShowReciept(false)
   }
 
-
-
-
     const {
       isEmpty,
       totalUniqueItems,
