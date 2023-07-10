@@ -2,9 +2,11 @@ import React from 'react'
 import ReactModal from 'react-modal'
 import emailjs from 'emailjs-com'
 import { useNavigate } from 'react-router-dom';
+import {  useCart } from 'react-use-cart';
 
 function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDetails}) {
   const navigate = useNavigate();
+  const { emptyCart} = useCart()
   const generateReceiptHTML = (customerNumber, customerLocation, orderDetails) => {
     const orderItems = orderDetails.map((item) => `${item.quantity} x ${item.name} - ${item.itemTotal}`);
     const totalPrice = orderDetails.reduce((total, item) => total + item.itemTotal, 0);
@@ -35,6 +37,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
   alert('imefikaa')
   navigate('/services');
 
+
     // Use the htmlTemplate value in the templateParams object
     const { message_html: htmlTemplate, ...params } = templateParams;
   
@@ -42,6 +45,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       .send('service_ao07pjn', 'template_oiqqsba', params, 'qEyYqEOEw8-vCzxec')
       .then((response) => {
         console.log('Receipt email sent successfully!', response.text);
+        emptyCart();//CLEAR CART AFTER EMAIL HAS BEEN SENT
       })
       .catch((error) => {
         console.error('Error sending receipt email:', error);
