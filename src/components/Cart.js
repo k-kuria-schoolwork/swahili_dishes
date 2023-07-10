@@ -14,8 +14,8 @@ function Cart() {
   //function to handle order placement
   const handlePlaceOrder = () =>{
       //prompt customer to enter their name
-      const customerNumber = prompt('Please enter your name!')
-      const customerLocation = prompt('Please your Number')
+      const customerNumber = prompt('Please enter your Number!')
+      const customerLocation = prompt('Please your Location')
 
 
       //Set customerNumber, location and orderdetails
@@ -44,7 +44,6 @@ function Cart() {
       items,
       updateItemQuantity,
       removeItem,
-      emptyCart
     } = useCart();
 
 

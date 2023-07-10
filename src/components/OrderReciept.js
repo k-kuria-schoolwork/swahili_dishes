@@ -33,6 +33,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       customerLocation: customerLocation,
       orderDetails: orderDetails,
       totalPrice: totalPrice,
+      message_html: generateReceiptHTML(customerNumber, customerLocation, orderDetails),
     };
   alert('imefikaa')
   navigate('/services');
@@ -107,7 +108,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
           <p>PAID TO: Mwanaz Bitez</p>
           <p>THANK YOU</p>
         </ul>   
-        <button  onClick={sendReceiptEmail}>Confirm Order</button>     
+        <button className='cartbtn5' onClick={sendReceiptEmail}>Confirm Order</button>     
     </div>
       </ReactModal>
     </div>
