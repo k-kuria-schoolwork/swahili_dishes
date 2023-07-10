@@ -392,12 +392,96 @@ tbody td {
   transition: transform 0.4s ease;
 }
 
+.price2{
+  color: red;
+}
+
 .cartbtn :active {
   /* Pull the button upwards when hovered */
   transform: translateY(-0.23em);
   /* Push the button downwards when pressed */
   transform: translateY(0.2em);
   box-shadow: none;
+}
+hr {
+  border: none; /* remove the default border */
+  border-top: 3px solid black; /* add a 1px solid line */
+  margin: 10px 0; /* adjust the margin as needed */
+  padding-right: 20%;
+
+}
+
+.recieptdata{
+  display: flex;
+  justify-content: center;
+  background-color: rgba(245, 242, 155, 0.531);
+  padding-bottom: 20%;
+color: black;
+}
+
+.recieptdata h2{
+  font-size: 40px;
+}
+.recieptdata h5{
+  font-size: 23px;
+  padding-left: 3%;
+
+}
+.recieptdata p{
+  font-size: 16px;
+  padding-left: 10%;
+
+}
+.emptycart{
+  display: flex;
+  justify-content: center;
+  padding-top: 18%;
+  font-size: 55px;
+}
+
+
+.cartbtn4 {
+  margin-left: 48%;
+
+  --hover-shadows: 16px 16px 33px #121212,
+                    -16px -16px 33px #303030;
+  --accent: rgb(235, 219, 158);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 1.1em;
+  background-color: #212121;
+  color: white;
+  padding: 1em 2em;
+  transition: box-shadow ease-in-out 0.3s,
+              background-color ease-in-out 0.1s,
+              letter-spacing ease-in-out 0.1s,
+              transform ease-in-out 0.1s;
+  box-shadow: 13px 13px 10px #1c1c1c82,
+              -13px -13px 10px #26262690;
+ }
+ 
+ .cartbtn4:hover {
+  box-shadow: var(--hover-shadows);
+ }
+ 
+ .cartbtn4:active {
+  box-shadow: var(--hover-shadows),
+               var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  transform: scale(0.95);
+ }
+.ordertable {
+  font-size: 20px;
+}
+.BOPDAD{
+  display: flex;
+  gap: 5rem;
+}
+.totalsub{
+  margin-top: 15%;
+  margin-bottom: 15%;
+
 }
 
 /* HOVER EFFECT FOR SCREENS LARGER THAN 1024*/
@@ -564,4 +648,30 @@ tbody td {
   .price2{
     color: red;
   }
+  .emptycart{
+    display: flex;
+    justify-content: center;
+    padding-top: 57%;
+    font-size: 25px;
+  }
+  .cartbtn4 {
+    margin-left: 35%;
+  
+    --hover-shadows: 16px 16px 33px #121212,
+                      -16px -16px 33px #303030;
+    --accent: rgb(235, 219, 158);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    color: white;
+    padding: 0.7em 0.9em;
+    transition: box-shadow ease-in-out 0.3s,
+                background-color ease-in-out 0.1s,
+                letter-spacing ease-in-out 0.1s,
+                transform ease-in-out 0.1s;
+    box-shadow: 13px 13px 10px #1c1c1c82,
+                -13px -13px 10px #26262690;
+   }
 }

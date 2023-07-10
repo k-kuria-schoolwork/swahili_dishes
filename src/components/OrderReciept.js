@@ -1,66 +1,110 @@
 import React from 'react'
 import ReactModal from 'react-modal'
+import emailjs from 'emailjs-com'
+import { useNavigate } from 'react-router-dom';
 
+function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDetails}) {
+  const navigate = useNavigate();
+  const generateReceiptHTML = (customerNumber, customerLocation, orderDetails) => {
+    const orderItems = orderDetails.map((item) => `${item.quantity} x ${item.name} - ${item.itemTotal}`);
+    const totalPrice = orderDetails.reduce((total, item) => total + item.itemTotal, 0);
+  
+    return `
+      <h2>Order Receipt</h2>
+      <p>Customer Name: ${customerNumber}</p>
+      <p>Customer Location: ${customerLocation}</p>
+      <h3>Order Details:</h3>
+      <ul>
+        ${orderItems.map((item) => `<li>${item}</li>`).join('')}
+      </ul>
+      <p>Total Price: ${totalPrice}</p>
+    `;
+  };
+  
+  
+  
+  const sendReceiptEmail = () => {
+    const templateParams = {
+      to_email: 'salimkuria221@gmail.com',
+      subject: 'Receipt for your order',
+      customerNumber: customerNumber,
+      customerLocation: customerLocation,
+      orderDetails: orderDetails,
+      totalPrice: totalPrice,
+    };
+  alert('imefikaa')
+  navigate('/services');
 
-function OrderReciept({isOpen, onClose, customerName,customerLocation, orderDetails}) {
-    
+    // Use the htmlTemplate value in the templateParams object
+    const { message_html: htmlTemplate, ...params } = templateParams;
+  
+    emailjs
+      .send('service_ao07pjn', 'template_oiqqsba', params, 'qEyYqEOEw8-vCzxec')
+      .then((response) => {
+        console.log('Receipt email sent successfully!', response.text);
+      })
+      .catch((error) => {
+        console.error('Error sending receipt email:', error);
+      });
+  };
+  
+  // ...
+  
+
       // Calculate the total quantity of goods in the cart
       const totalPrice = orderDetails.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div className='reciept'>
+      <ReactModal className='recieptdata' isOpen={isOpen} onRequestClose={onClose}>
+        <div className='recieptcontainer'>
 
-          {/*styling the prompt card*/}
-          {/* <div className='prompt-card'>
-              <h3>Please enter your details</h3>
-              <label>
-                Name:
-                <input type='text' value={customerName} onChange={(e) => setCustomerName(e.target.value)}/>
-              </label>
-              <label>
-                Location:
-                <input type='text' value={customerLocation} onChange={(e)=> setCustomerLocation(e.target.value)}/>
-              </label>
-              <button onClick={handlePlaceOrder}>Submit</button>
-            </div> */}
-
-
-      <ReactModal isOpen={isOpen} onRequestClose={onClose}>
             <h2>Mwanaz Bitez</h2>
             <h5>Best Swahili Dishes</h5>
             <p>Kahawa Wendani</p>
-            <p>Host: Mwanajuma</p>
-            <p>Order: 31 11:43am</p>
-
-            <p>Customer Name: {customerName}</p>
+            <hr></hr>
+            <p>Customer Number: {customerNumber}</p>
             <p>Customer location: {customerLocation}</p>
-            <h3>Order Details:</h3>
+            <h6 className='BOPDAD'>
+             <h6>
+             Order: 31
+              </h6> 
+              <h6>
+              11:43am
+              </h6>
+              </h6>
+            <hr></hr>
+            <h3>Order SALES:</h3>
         <ul>
 
-          <table>
+          <table >
             <thead>
-            <tr>
+            <tr className='ordertable'>
+            <th>Qy</th>
             <th>Item</th>
-            <th>Quantity</th>
             <th>Total</th>    
              </tr>
             </thead>
-            <tbody>
+            <tbody className='paper'>
               {
                 orderDetails.map((item) => (
                   <tr key={item.id}>
+                   <td>{item.quantity}</td>
                   <td>{item.name}</td>
-                  <td>{item.quantity}</td>
                   <td>{item.itemTotal}</td>
                   </tr>
                 ))
               }
+              
             </tbody>
-            <p>Subtotal: {totalPrice}</p>
-
+            <h3 className='totalsub'>Subtotal: {totalPrice}</h3>
+            
           </table>
-        </ul>        
-    <button onClick={onClose}Close>CLOSE</button>
+          <p>PAID TO: Mwanaz Bitez</p>
+          <p>THANK YOU</p>
+        </ul>   
+        <button  onClick={sendReceiptEmail}>Confirm Order</button>     
+    </div>
       </ReactModal>
     </div>
   )

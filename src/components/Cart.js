@@ -1,31 +1,32 @@
 import React from 'react'
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {  useState } from 'react';
 import OrderReciept from './OrderReciept';
-
 function Cart() {
 
   const [showReciept, setShowReciept] = useState(false)
-  const [customerName, setCustomerName] = useState('')
+  const [customerNumber, setcustomerNumber] = useState('')
   const [customerLocation, setCustomerLocation] = useState('')
   const [orderDetails, setOrderDetails] = useState([])
-
+  
 
   //function to handle order placement
   const handlePlaceOrder = () =>{
       //prompt customer to enter their name
-      const customerName = prompt('Please enter your name!')
-      const customerLocation = prompt('Please give a descriptive location!')
+      const customerNumber = prompt('Please enter your name!')
+      const customerLocation = prompt('Please your Number')
 
 
-      //Set customername, location and orderdetails
-      setCustomerName(customerName)
+      //Set customerNumber, location and orderdetails
+      setcustomerNumber(customerNumber)
       setCustomerLocation(customerLocation)
       setOrderDetails(items); // Convert items array to a string
+    // Clear the cart after order confirmation
 
       //show receipt modal
       setShowReciept(true)
+
   }
 
 
@@ -43,9 +44,21 @@ function Cart() {
       items,
       updateItemQuantity,
       removeItem,
+      emptyCart
     } = useCart();
-  
-    if (isEmpty) return <p className='emptycart'>Your cart is empty</p>;
+
+
+      
+
+
+    if (isEmpty) return <p >
+     <h3 className='emptycart'>
+     Your cart is empty
+      </h3> 
+      <Link to='/services'>
+      <button className='cartbtn4'>go back</button>
+      </Link>
+      </p>;
 
       // Calculate the total quantity of goods in the cart
       const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -88,7 +101,7 @@ function Cart() {
             <i id='addbtn' className="fa-solid fa-plus"></i>
           </button>
         </td>
-        <td>{parseFloat(item.price).toFixed(2)}</td>
+        <td>{parseFloat(item.quantity * item.price).toFixed(2)}</td>
         <td>
           <button  id="dustbin" onClick={() => removeItem(item.id)}>
             <i  className="fa-sharp fa-solid fa-trash"></i>
@@ -103,13 +116,13 @@ function Cart() {
 
 					
           <span class="title">Total Price:<span className='price2'>Ksh{totalPrice.toFixed(2)}</span> </span>
-					<button onClick={handlePlaceOrder} type="button" class="action">Make Order</button>
+					<button onClick={handlePlaceOrder} type="button" class="action">Place Order</button>
 
             {/* Receipt Modal */}
   <OrderReciept
              isOpen={showReciept}
              onClose={handleCloseReciept}
-             customerName={customerName}
+             customerNumber={customerNumber}
              customerLocation={customerLocation}
              orderDetails={orderDetails}
       />
