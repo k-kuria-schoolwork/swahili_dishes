@@ -4,6 +4,9 @@ import ReactModal from 'react-modal'
 
 function OrderReciept({isOpen, onClose, customerName,customerLocation, orderDetails}) {
     
+      // Calculate the total quantity of goods in the cart
+      const totalPrice = orderDetails.reduce((total, item) => total + item.price * item.quantity, 0);
+
   return (
     <div className='reciept'>
 
@@ -23,18 +26,39 @@ function OrderReciept({isOpen, onClose, customerName,customerLocation, orderDeta
 
 
       <ReactModal isOpen={isOpen} onRequestClose={onClose}>
-            <h2>reciept</h2>
+            <h2>Mwanaz Bitez</h2>
+            <h5>Best Swahili Dishes</h5>
+            <p>Kahawa Wendani</p>
+            <p>Host: Mwanajuma</p>
+            <p>Order: 31 11:43am</p>
+
             <p>Customer Name: {customerName}</p>
             <p>Customer location: {customerLocation}</p>
             <h3>Order Details:</h3>
         <ul>
-          {orderDetails.map((item) => (
-            <li key={item.id}>
-              <span>Name: {item.name}</span>
-              <span>Quantity: {item.quantity}</span>
-              <span>Total: {item.itemTotal}</span>
-            </li>
-          ))}
+
+          <table>
+            <thead>
+            <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total</th>    
+             </tr>
+            </thead>
+            <tbody>
+              {
+                orderDetails.map((item) => (
+                  <tr key={item.id}>
+                  <td>{item.name}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.itemTotal}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+            <p>Subtotal: {totalPrice}</p>
+
+          </table>
         </ul>        
     <button onClick={onClose}Close>CLOSE</button>
       </ReactModal>

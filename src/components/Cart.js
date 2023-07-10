@@ -45,7 +45,7 @@ function Cart() {
       removeItem,
     } = useCart();
   
-    if (isEmpty) return <p>Your cart is empty</p>;
+    if (isEmpty) return <p className='emptycart'>Your cart is empty</p>;
 
       // Calculate the total quantity of goods in the cart
       const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -73,7 +73,6 @@ function Cart() {
       <th>Item</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
