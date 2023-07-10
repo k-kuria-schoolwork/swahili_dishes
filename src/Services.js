@@ -39,16 +39,6 @@ const addItemToAddedItems = (itemId) => {
         return  categoryFilter && searchFilter
     })
     
-   {/* SEARCH FILTER FUNCTION*/}
-  //  let dataSearch = data.cardData.filter(item =>{
-  //   return Object.keys(item).some(key=>
-  //       item[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
-  //  })
-
-
-
-
-
   return (
     <div>
 
