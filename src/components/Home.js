@@ -6,35 +6,35 @@ function Home() {
     <div >
 
         <div className='homepage'>
-      <h2>Express yourself through Swahili dishes</h2>
-      <div className='carousel'>
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img  src='../images/foodhome1.png' alt='contimage'></img>
-    </div>
-    <div class="carousel-item">
-    <img  src='../images/foodhome2.png' alt='contimage'></img>
-    </div>
-    <div class="carousel-item">
-    <img  src='../images/foodhome3.png' alt='contimage'></img>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+          <h1 className='homehead'> Mwanaz Bites</h1>
+          <div className='home1'>
+            <div className='home1a'>
+            <h5>Express yourself through the best Swahili dishes</h5>
+            <p>All the dishes you love are just a click away.Order from our full menu, and enjoy the comfort of online reservation</p>
+            </div> 
+           <div>
+           <img className='imga' src='https://ling-app.com/wp-content/uploads/2022/03/Swahili-Foods.jpg' alt='foodimage'></img>
+            </div> 
+          </div>
 
+          <div className='home2'>
+            <div>
+            <img className='home2a' src='https://lh3.googleusercontent.com/p/AF1QipMSOrJ8Lla9KY9tGVH9rrDJxyi2wf9Y6a7KGfAH=w1080-h608-p-no-v0' alt='foodimage'></img>
+            </div>
+            <div className='home2text'>
+            <h4>Treat yourself to our daily specials</h4>
+            <p>Spend more time enjoying yourself and less time stressing about the details with catering from us.</p>
+            </div>
+          </div>
       </div>
-      </div>
+      <div className='home3'>
+      <h3>Let us do the cooking</h3>
+      <p>Enjoy our online services</p>
       <button className='BTN1'>
         <Link className='linkbtn1' to='Services'> Get Started</Link>
       </button>
+      </div>
+     
     </div>
     
   )

@@ -1,34 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Raleway:ital,wght@0,300;1,200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
-.homepage h2 {
-  font-size: 60px;
-  width: 70%;
-  color: rgb(0, 0, 0);
+.homepage  {
+  font-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
 }
 
-.carousel img {
-  width: 100%;
-  height: 55vh;
-  border-radius: 200px;
-  margin-top: 10%;
+.homehead{
+  margin-left: 30%;
+  margin-top: 3%;
+  font-size: 75px;
+  font-style: italic;
+  background-color: yellow;
+  width: 45%;
+  padding-left: 10%;
 }
 
-.carousel {
-  width: 70%;
+.home1 {
+ display: flex;
+ margin-top: 3%;
+ 
 }
-
-.homepage {
-  justify-content: center;
-  align-items: center;
-  margin-left: 10%;
+.home1a{
+  background-color: rgb(255, 255, 247);
+  width: 38%;
+  margin-top: 8%;
+  margin-left: 4%;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+  z-index: 1;
+  padding-left: 3%;
+  padding-bottom: 3%;
+}
+.home1a h5{
+  font-size: 48px;
+  color: black;
+  margin-bottom: 5%;
+  
+}
+.home1a p{
+  color: black;
+  font-size: 18px;
+  width: 80%;
+}
+.imga{
+  margin-left: 80%;
+  width: 95%;
+}
+.home2 {
   display: flex;
+  margin-top: 10%;
   position: relative;
+  left: -60px;
+  top: 40px;
+  z-index: -1;
+ }
+ .home2a{
+  width: 75%;
+  margin-left: 45%;
+  margin-bottom: 20%;
 
+ }
+ .home2text{
+color: rgb(0, 0, 0); 
+background-color: white;
+padding-left: 2%;
+margin-top: 10%;
+width: 30%;
 }
+.home2text h4{
+font-size: 45px;
+}
+ .home3{
+  margin-top: 0px;
+ }
 
 
 
@@ -693,16 +745,7 @@ color: black;
   }
  
   
-  .carousel img {
-    width: 100%;
-    height: 30vh;
-    border-radius: 200px;
-    margin-top: 10%;
-  }
   
-  .carousel {
-    width: 90%;
-  }
   
   .homepage {
     justify-content: center;

@@ -3,6 +3,7 @@ import ReactModal from 'react-modal'
 import emailjs from 'emailjs-com'
 import { useNavigate } from 'react-router-dom';
 import {  useCart } from 'react-use-cart';
+import alertify from 'alertifyjs' ;
 
 function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDetails}) {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       totalPrice: totalPrice,
       message_html: generateReceiptHTML(customerNumber, customerLocation, orderDetails),
     };
+    alertify.alert('Bookings', 'Appointment Booked Successfully!', function(){ alertify.success('Ok'); });
   alert('imefikaa')
   navigate('/services');
 
