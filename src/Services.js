@@ -34,7 +34,7 @@ const addItemToAddedItems = (itemId) => {
     const filteredItems = data.cardData.filter((item) => {
       const categoryFilter = selectedCategory === 'all' || item.category === selectedCategory
       const searchFilter =  Object.keys(item).some(key=>
-        item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+        item[key].toString().toLowerCase().includes(filter.toString().toUpperCase())
         )
         return  categoryFilter && searchFilter
     })
@@ -50,34 +50,39 @@ const addItemToAddedItems = (itemId) => {
     </svg> */}
     <div className='py-4 container '>
         <div className='row justify-container-centre'>
-            
+            <div className='blackhead'>
             <div className='servehead'>
                 <p>welcome </p>  
                 <h2>What can we serve you</h2>
                 </div>
-            <div className='searchbar'>
 
-                <div className='col-4 mb-5' id='search1' >
-                    <div className='mb-3 col-17 mx-auto text-centre' >
-                        <input
-                        id='searchfood'
-                        type='text'
-                        placeholder="What are you buying..." 
-                        className='form-control'
-                        value={filter}
-                        onChange={searchText.bind(this)}
-                        />
-                    </div>
-                </div>
+                <div className='searchbar'>
 
-                <div className='carticon'>
-                       <Link to='addcart'> 
-                         <i class="fa-solid fa-cart-shopping">
-                           <h6>{totalItems}</h6> 
-                            </i>
-                       </Link> 
-                </div>
+                  <div className='col-4 mb-5' id='search1' >
+                      <div className='mb-3 col-17 mx-auto text-centre' >
+                          <input
+                          id='searchfood'
+                          type='text'
+                          placeholder="What are you buying..." 
+                          className='form-control'
+                          value={filter}
+                          onChange={searchText.bind(this)}
+                          />
+                      </div>
+                  </div>
+
+                  <div className='carticon'>
+                        <Link to='addcart'> 
+                          <i class="fa-solid fa-cart-shopping">
+                            <h6>{totalItems}</h6> 
+                              </i>
+                        </Link> 
+                      <p>View Cart</p>  
+                  </div>
+                  </div>
             </div>
+            
+         
 
             <div className='category'>
                 <div className='catwrapper'>

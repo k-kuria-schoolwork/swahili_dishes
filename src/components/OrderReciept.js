@@ -36,9 +36,8 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       totalPrice: totalPrice,
       message_html: generateReceiptHTML(customerNumber, customerLocation, orderDetails),
     };
-    alertify.alert('Bookings', 'Appointment Booked Successfully!', function(){ alertify.success('Ok'); });
-  alert('imefikaa')
-  navigate('/services');
+    alertify.alert('Orders', 'Ordered Created Successfully!', function(){ alertify.success('Ok'); });
+  navigate('/');
 
 
     // Use the htmlTemplate value in the templateParams object

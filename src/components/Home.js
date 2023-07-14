@@ -28,11 +28,18 @@ function Home() {
           </div>
       </div>
       <div className='home3'>
-      <h3>Let us do the cooking</h3>
-      <p>Enjoy our online services</p>
+        <div className='home3a'>
+        <h3>Get Started with our App</h3>
+       <p>All the dishes you love are just a few clicks away.Order from our menu  and enjoy the comfort</p>
       <button className='BTN1'>
         <Link className='linkbtn1' to='Services'> Get Started</Link>
       </button>
+      
+   
+        </div>
+         <div>
+           <img className='img4' src='https://www.foodandthefabulous.com/wp-content/uploads/2019/09/MomsFood1-500x383.jpg' alt='foodimage'></img>
+        </div> 
       </div>
      
     </div>
