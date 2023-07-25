@@ -253,7 +253,7 @@ margin-top: 6%;
   gap: 0.5rem;
 }
 .carticon i:hover{
-
+color: green;
 }
 
 .cartheader {
@@ -591,7 +591,9 @@ color: black;
 }
 
 /* HOVER EFFECT FOR SCREENS LARGER THAN 1024*/
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+  
+}
 
 
 /* HOVER EFFECT FOR SCREENS BETWEEN 601PX AND 1024*/

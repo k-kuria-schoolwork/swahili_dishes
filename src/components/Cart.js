@@ -76,7 +76,7 @@ function Cart() {
 						<span class="price">Cart ({totalUniqueItems})</span>
 					</div>
 					<p class="desc">Thank You  for Shopping With Us</p>
-          <table className='carttable'>
+  <table className='carttable'>
   <thead>
     <tr>
       <th>Item</th>
