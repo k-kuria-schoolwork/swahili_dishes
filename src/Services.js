@@ -32,11 +32,11 @@ const addItemToAddedItems = (itemId) => {
 
     //Filter items based on category and search
     const filteredItems = data.cardData.filter((item) => {
-      const categoryFilter = selectedCategory === 'all' || item.category === selectedCategory
-      const searchFilter =  Object.keys(item).some(key=>
-        item[key].toString().toLowerCase().includes(filter.toString().toUpperCase())
-        )
-        return  categoryFilter && searchFilter
+      const categoryFilter = selectedCategory === 'all' || item.category === selectedCategory;
+      const searchFilter = Object.keys(item).some((key) =>
+        item[key].toString().toLowerCase().includes(filter.toLowerCase())
+      );
+      return categoryFilter && searchFilter;
     })
     
   return (
