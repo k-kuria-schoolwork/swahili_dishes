@@ -44,7 +44,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
     const { message_html: htmlTemplate, ...params } = templateParams;
   
     emailjs
-      .send('service_ao07pjn', 'template_oiqqsba', params, 'qEyYqEOEw8-vCzxec')
+      .send('service_fx02hl6', 'template_oiqqsba', params, 'qEyYqEOEw8-vCzxec')
       .then((response) => {
         console.log('Receipt email sent successfully!', response.text);
         emptyCart();//CLEAR CART AFTER EMAIL HAS BEEN SENT

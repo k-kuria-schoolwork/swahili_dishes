@@ -108,7 +108,7 @@ const addItemToAddedItems = (itemId) => {
                     <p className='card-text'>Ksh.{item.price}</p>
                     <button
                 onClick={() => {
-                  if (!isItemAdded(item.id)) {
+                  if (!isItemAdded(item.id)) {serve
                     addItem(item);
                     addItemToAddedItems(item.id);
                   }
