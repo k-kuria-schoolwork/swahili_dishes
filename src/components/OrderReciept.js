@@ -8,8 +8,10 @@ import alertify from 'alertifyjs' ;
 function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDetails}) {
   const navigate = useNavigate();
   const { emptyCart} = useCart()
+
+  
   const generateReceiptHTML = (customerNumber, customerLocation, orderDetails) => {
-    const orderItems = orderDetails.map((item) => `${item.quantity} x ${item.name} - ${item.itemTotal}`);
+    const orderItems = orderDetails.map((item) => `${item.quantity} x ${item.name} - ${item.price}`);
     const totalPrice = orderDetails.reduce((total, item) => total + item.itemTotal, 0);
   
     return `
@@ -26,6 +28,7 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
   
   
   
+  
   const sendReceiptEmail = () => {
     const templateParams = {
       to_email: 'salimkuria221@gmail.com',
@@ -36,10 +39,12 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       totalPrice: totalPrice,
       message_html: generateReceiptHTML(customerNumber, customerLocation, orderDetails),
     };
+  
     alertify.alert('Orders', 'Ordered Created Successfully!', function(){ alertify.success('Ok'); });
-  navigate('/');
-
-
+    navigate('/');
+  
+    console.log('Data before sending:', templateParams);
+  
     // Use the htmlTemplate value in the templateParams object
     const { message_html: htmlTemplate, ...params } = templateParams;
   
@@ -47,12 +52,13 @@ function OrderReciept({isOpen, onClose, customerNumber,customerLocation, orderDe
       .send('service_fx02hl6', 'template_oiqqsba', params, 'qEyYqEOEw8-vCzxec')
       .then((response) => {
         console.log('Receipt email sent successfully!', response.text);
-        emptyCart();//CLEAR CART AFTER EMAIL HAS BEEN SENT
+        emptyCart(); // CLEAR CART AFTER EMAIL HAS BEEN SENT
       })
       .catch((error) => {
         console.error('Error sending receipt email:', error);
       });
   };
+  
   
   // ...
   
